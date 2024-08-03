@@ -17,6 +17,7 @@ import { Label } from "@/components/ui/label";
 export function SigninForm() {
     return (
         <div className="w-full max-w-md">
+            {/* action={registerUserAction} */}
             <form>
                 <Card>
                     <CardHeader className="space-y-1">
@@ -46,7 +47,7 @@ export function SigninForm() {
                         </div>
                     </CardContent>
                     <CardFooter className="flex flex-col">
-                        <button className="w-full">Sign In</button>
+                        <button type="submit" className="w-full">Sign In</button>
                     </CardFooter>
                 </Card>
                 <div className="mt-4 text-center text-sm">

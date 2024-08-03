@@ -1,4 +1,6 @@
 "use client";
+import { registerUserAction } from "@/app/data/actions/auth-actions";
+import { useFormState } from "react-dom";
 
 import Link from "next/link";
 
@@ -14,10 +16,17 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
+const INITIAL_STATE = {
+    data: "hello wonderful people",
+}
+
 export function SignupForm() {
+    const [formState, formAction] = useFormState(registerUserAction, INITIAL_STATE);
+    console.log(formState, "client");
+
     return (
         <div className="w-full max-w-md">
-            <form>
+            <form action={formAction}>
                 <Card>
                     <CardHeader className="space-y-1">
                         <CardTitle className="text-3xl font-bold">Sign Up</CardTitle>

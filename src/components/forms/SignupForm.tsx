@@ -15,6 +15,8 @@ import {
 
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { StrapiErrors } from "../ui/custom/StrapiErrors";
+import { SubmitButton } from "../ui/custom/SubmitButton";
 import { ZodErrors } from "../ui/custom/ZodError";
 
 const INITIAL_STATE = {
@@ -71,7 +73,8 @@ export function SignupForm() {
                         </div>
                     </CardContent>
                     <CardFooter className="flex flex-col">
-                        <button className="w-full">Sign Up</button>
+                        <SubmitButton className="w-full" text="Sign up" loadingText="Loading" />
+                        <StrapiErrors error={formState?.strapiErrors} />
                     </CardFooter>
                 </Card>
                 <div className="mt-4 text-center text-sm">

@@ -18,7 +18,6 @@ function blockRenderer(block: any) {
 
 export default async function Home() {
   const strapiData = await getHomePageData();
-  console.log(strapiData, 'here')
 
   const { blocks } = strapiData;
   if (!blocks) return <div>No blocks found</div>

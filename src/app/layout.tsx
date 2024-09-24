@@ -1,5 +1,6 @@
 import { Footer } from "@/components/ui/custom/Footer";
 import { Header } from "@/components/ui/custom/Header";
+import { Toaster } from "@/components/ui/sonner";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { getGlobalPageData, getGlobalPageMetaData } from "./data/loaders";
@@ -25,6 +26,7 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <Toaster position="bottom-center" />
         <Header data={globalData.header} />
         <div>{children}</div>
         <Footer data={globalData.footer} />
